@@ -2,27 +2,28 @@ require 'spec_helper'
 
 describe "Static pages" do
 
-  describe "Registration page" do
+  subject { page }
 
-    it "should have the content 'Sign up here'" do
-      visit '/static_pages/registration'
-      expect(page).to have_content('Sign up here')
-    end
+  describe "Registration page" do
+    before { visit root_path }
+
+    it { should have_content('Sign up here') }
+    it { should have_title(full_title('')) }
+    it { should_not have_title('| Registration') }
   end
 
   describe "Help page" do
+    before { visit help_path }
 
-    it "should have the content 'Help'" do
-      visit '/static_pages/help'
-      expect(page).to have_content('Help')
-    end
+    it { should have_content('Help') }
+    it { should have_title(full_title('Help')) }
   end
 
   describe "About page" do
+    before { visit about_path }
 
-    it "should have the content 'About this app'" do
-      visit '/static_pages/about'
-      expect(page).to have_content('About this app')
-    end
+    it { should have_content('About') }
+    it { should have_title(full_title('Cakeday | About Us')) }
   end
+
 end
