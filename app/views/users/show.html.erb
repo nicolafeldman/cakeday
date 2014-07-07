@@ -1,3 +1,9 @@
 <%= flash[:success] %>
 <%= @user.name %>
 <%= @user.email %>
+
+<%= form_for(:cake, url: cakes_path) do |f| %>
+
+
+      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+    <% end %>

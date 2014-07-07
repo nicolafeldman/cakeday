@@ -1,5 +1,9 @@
 Cakeday::Application.routes.draw do
 
+  get "cakes/new"
+  get "cakes/create"
+  get "cakes/destroy"
+  get "cakes/give"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   get "users/new"
