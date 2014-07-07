@@ -11,6 +11,7 @@ Cakes you have: <%= @user.cakes.count %>
 	<% else %>
 
 	<%= form_for(@cake) do |f| %>
+	<%= f.hidden_field value=@user.id %>
 		<%= f.submit "Give me a cake!", class: "btn btn-large btn-primary" %>
 
 	<% end %>
