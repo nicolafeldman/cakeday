@@ -3,6 +3,8 @@ Cakeday::Application.routes.draw do
   resources :users
   get "users/new"
   root 'static_pages#registration'
+
+  match '/users', to: 'users#index', via: 'get'
  
   match '/signup',  to: 'users#new',            via: 'get'
   
