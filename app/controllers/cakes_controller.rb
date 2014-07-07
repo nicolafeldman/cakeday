@@ -1,10 +1,17 @@
 class CakesController < ApplicationController
-  def new
-
-  end
-
+  before_action :signed_in_user
+ 
   def create
-  	@cake = Cake.create(flavor: "chocolate", message: "I made this for you! Hope you like it!", user_id: )
+  	@cake = current_user.cakes.build(flavor: "chocolate", 
+  		message: "I made this for you! Hope you like it!", 
+  		user_id: current_user.id, has_been_given: false)
+  	  if @cake.save
+  	  	flash[:success] = "Your Cake is Baked :)"
+		redirect_to current_user #this might be wrong, keep an eye out!!!!!
+	  else
+	  	render 'static_pages/help'
+	  end
+
   end
 
   def destroy

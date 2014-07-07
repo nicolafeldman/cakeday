@@ -5,6 +5,7 @@ Cakeday::Application.routes.draw do
   get "cakes/destroy"
   get "cakes/give"
   resources :users
+  resources :cakes
   resources :sessions, only: [:new, :create, :destroy]
   get "users/new"
   root 'static_pages#registration'

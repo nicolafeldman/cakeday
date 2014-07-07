@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+  	@cake = current_user.cakes.build if signed_in?
   end
 
 private 

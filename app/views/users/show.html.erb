@@ -2,8 +2,10 @@
 <%= @user.name %>
 <%= @user.email %>
 
-<%= form_for(:cake, url: cakes_path) do |f| %>
+Cakes you have: <%= @user.cakes.count %>
+<% if current_user == @user %>
+<%= form_for(@cake) do |f| %>
+     <%= f.submit "Bake a cake!", class: "btn btn-large btn-primary" %>
+<% end %>
 
-
-      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
-    <% end %>
+<% end %>
