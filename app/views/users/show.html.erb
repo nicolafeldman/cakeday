@@ -8,4 +8,15 @@ Cakes you have: <%= @user.cakes.count %>
      <%= f.submit "Bake a cake!", class: "btn btn-large btn-primary" %>
 <% end %>
 
+	<% else %>
+
+	<%= form_for(@cake) do |f| %>
+		<%= f.submit "Give me a cake!", class: "btn btn-large btn-primary" %>
+
+	<% end %>
 <% end %>
+
+
+
+
+

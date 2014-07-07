@@ -7,7 +7,7 @@ class CakesController < ApplicationController
   		user_id: current_user.id, has_been_given: false)
   	  if @cake.save
   	  	flash[:success] = "Your Cake is Baked :)"
-		redirect_to current_user #this might be wrong, keep an eye out!!!!!
+		redirect_to current_user
 	  else
 	  	render 'static_pages/help'
 	  end
@@ -18,5 +18,6 @@ class CakesController < ApplicationController
   end
 
   def give
+  	render 'users/show'
   end
 end
