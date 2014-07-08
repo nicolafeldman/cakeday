@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140707190648) do
+ActiveRecord::Schema.define(version: 20140708141550) do
 
   create_table "cakes", force: true do |t|
     t.string   "flavor"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140707190648) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
+    t.float    "happiness",       default: 1.0
   end
 
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"

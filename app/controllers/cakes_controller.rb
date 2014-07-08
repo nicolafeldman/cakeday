@@ -1,3 +1,4 @@
+require 'pry'
 class CakesController < ApplicationController
   before_action :signed_in_user
  
@@ -21,6 +22,9 @@ class CakesController < ApplicationController
     if current_user.cakes.count > 0
       @cake = current_user.cakes.first
       @cake.update_attributes(user_id: params[:id])
+      current_user.update_attribute(:happiness, (current_user.happiness + 1.0))
+      User.find(params[:id]).update_attribute(:happiness, (User.find(params[:id]).happiness + 0.5))
+
       redirect_to "/users/" + params[:id]
     else
       flash[:no_more_cakes] = 'You have no more cakes to give.'
