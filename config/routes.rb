@@ -16,6 +16,7 @@ Cakeday::Application.routes.draw do
   match '/signup',  to: 'users#new',            via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/help', to: 'static_pages#help', via: 'get'
+  match '/cakes/:id/transfercake', to: 'cakes#transfercake', via: 'patch'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
