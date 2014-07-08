@@ -1,6 +1,8 @@
 <%= flash[:success] %>
-<%= @user.name %>
-<%= @user.email %>
+<%= flash[:no_more_cakes] %>
+<br>
+<%= @user.name %> <br>
+<%= @user.email %> <br>
 
 Cakes you have: <%= @user.cakes.count %>
 <% if current_user == @user %>

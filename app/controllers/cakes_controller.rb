@@ -18,12 +18,14 @@ class CakesController < ApplicationController
   end
 
   def transfercake
-    @cake = current_user.cakes.first
-    @cake.update_attributes(user_id: params[:id])
-    redirect_to "/users/" + params[:id]
+    if current_user.cakes.count > 0
+      @cake = current_user.cakes.first
+      @cake.update_attributes(user_id: params[:id])
+      redirect_to "/users/" + params[:id]
+    else
+      flash[:no_more_cakes] = 'You have no more cakes to give.'
+      redirect_to "/users/" + current_user.id.to_s
+    end
   end
 
-  # def give
-  # 	render 'users/show'
-  # end
 end
