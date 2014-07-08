@@ -1,11 +1,19 @@
 <div class="username">
-<%= @user.name %> <br>
+<%= @user.name %>
 </div>
+<br>
 
-<div class="happiness">
+<div id="happiness">
 Happiness meter: <%= @user.happiness %>
 </div>
 <br>
+
+<div id="baked">
+Cakes <%= @user.name%> baked: <br> <br>
+<% @user.cakes.where("has_been_given = ?", false).each do |cake| %>
+	<img src=<%= cake.photo %> >
+<% end %>
+</div> <br>
 
 <% if current_user == @user %>
 <%= form_for(@cake) do |f| %>
@@ -21,13 +29,6 @@ Happiness meter: <%= @user.happiness %>
 
 <% end %>
 
-
-<div id="baked">
-Cakes <%= @user.name%> baked:
-<% @user.cakes.where("has_been_given = ?", false).each do |cake| %>
-	<img src=<%= cake.photo %> width="50" height="50">
-<% end %>
-</div>
 
 <div id="received">
 Cakes <%= @user.name%> has received:

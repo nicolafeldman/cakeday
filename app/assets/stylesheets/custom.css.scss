@@ -75,21 +75,42 @@ p {
   }
 }
 
-/* flashes */
 
 .username {
   font-size: 50px;
   padding: 10px;
   font-family: 'Raleway', sans-serif;
+  max-width: 40%;
+  line-height: 1;
+  display: inline-block;
+  float: left;
 }
 
-.happiness {
-  float: right;
+#happiness {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 40%;
+  float: left;
 }
 
 #baked {
-  float: right;
-  width: 40%;
+  float: left;
+  width: 25%;
+  height: 100vh;
+  text-align: center;
+  color: green;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px black;
+  img {
+    width: 10%;
+    height: auto;
+  }
+  background-color: #C2C2D6;
+  border-radius: 5px;
+  border: 2px solid gray;
+  padding: 10px;
+  opacity: 0.75;
+  margin-bottom: 200px;
 }
 
 
