@@ -75,28 +75,31 @@ p {
   }
 }
 
-/* footer */
+/* flashes */
 
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
-  a {
-    color: $gray;
-    &:hover {
-      color: $grayDarker;
-    }
-  }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 10px;
-    }
-  }
+.username {
+  font-size: 50px;
+  padding: 10px;
+  font-family: 'Raleway', sans-serif;
 }
+
+.happiness {
+  float: right;
+}
+
+#baked {
+  float: right;
+  width: 40%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
