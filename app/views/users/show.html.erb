@@ -1,12 +1,12 @@
 <%= flash[:success] %>
 <%= flash[:no_more_cakes] %>
+<%= flash[:been_given] %>
 <br>
 <%= @user.name %> <br>
 <%= @user.email %> <br>
 
 Your happiness meter reads: <%= @user.happiness %> <br>
 
-Cakes you have: <%= @user.cakes.count %>
 <% if current_user == @user %>
 <%= form_for(@cake) do |f| %>
      <%= f.submit "Bake a cake!", class: "btn btn-large btn-primary" %>
@@ -20,3 +20,20 @@ Cakes you have: <%= @user.cakes.count %>
 	<% end %>
 
 <% end %>
+
+Cakes you have: <%= @user.cakes.count %>
+<div>
+Cakes you baked:
+<% @user.cakes.where("has_been_given = ?", false).each do |cake| %>
+	<img src=<%= cake.photo %> width="50" height="50">
+<% end %>
+</div>
+
+<div>
+Cakes you've received:
+<% @user.cakes.where("has_been_given = ?", true).each do |cake| %>
+	<img src=<%= cake.photo %> width="50" height="50">
+	This cake was given to you by <%= cake.baked_by %>
+	<br>
+<% end %>
+</div>

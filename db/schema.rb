@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140708141550) do
+ActiveRecord::Schema.define(version: 20140708154258) do
 
   create_table "cakes", force: true do |t|
     t.string   "flavor"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20140708141550) do
     t.boolean  "has_been_given"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "baked_by"
+    t.string   "photo",          default: "http://cakepic4u.com/wp-content/uploads/2014/05/birthday-cakes-pictures-clip-art-4.jpg"
   end
 
   create_table "users", force: true do |t|
