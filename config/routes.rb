@@ -3,7 +3,7 @@ Cakeday::Application.routes.draw do
   get "cakes/new"
   get "cakes/create"
   get "cakes/destroy"
-  get "cakes/give"
+  match 'cakes/:id/give', to: 'cakes#give', via: 'get'
   resources :users
   resources :cakes
   resources :sessions, only: [:new, :create, :destroy]
