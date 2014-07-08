@@ -14,7 +14,7 @@ Your happiness meter reads: <%= @user.happiness %> <br>
 
 	<% else %>
 
-	<%= form_tag "/cakes/" + params[:id] + "/transfercake", method: "patch" do %>
+	<%= form_tag "/cakes/" + params[:id] + "/give", method: "get" do %>
 
 		<%= submit_tag "Give me a cake!", class: "btn btn-large btn-primary" %>
 	<% end %>

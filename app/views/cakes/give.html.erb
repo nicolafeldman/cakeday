@@ -1,2 +1,16 @@
-<h1>Cakes#give</h1>
-<p>Find me in app/views/cakes/give.html.erb</p>
+<h1>Your cakes!</h1>
+
+<% @cakes.each do |cake| %>
+	
+	<img src=<%= cake.photo %> width="150" height="150">
+
+	<%= form_tag "/cakes/" + params[:id] + "/transfercake", method: "patch" do %>
+		<%= label_tag("Send a message!") %> <%= text_area_tag(:message) %>
+		<%= hidden_field_tag "cake_id", cake.id %>
+		<%= submit_tag("Give to (name)") %>
+
+	<% end %> <br>
+
+	
+
+<% end %>

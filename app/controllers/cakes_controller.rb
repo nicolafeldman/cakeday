@@ -29,8 +29,12 @@ class CakesController < ApplicationController
   def destroy
   end
 
+  def give
+    @cakes = current_user.cakes.where("has_been_given = ?", false)
+  end
+
   def transfercake
-    @cake = current_user.cakes.find_by(has_been_given: false)
+    @cake = current_user.cakes.find(params[:cake_id])
     if (@cake == nil)
        flash[:been_given] = "You don't have any cakes to give."
        redirect_to "/users/" + current_user.id.to_s
@@ -44,5 +48,7 @@ class CakesController < ApplicationController
       redirect_to "/users/" + current_user.id.to_s
     end
   end
+
+
 
 end
