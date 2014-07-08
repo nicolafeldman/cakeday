@@ -12,7 +12,7 @@ class CakesController < ApplicationController
       "birthday" => "http://cakepic4u.com/wp-content/uploads/2014/05/birthday-cakes-pictures-clip-art-4.jpg"}
   	this_flavor = flavors.keys.sample
     @cake = current_user.cakes.build(flavor: this_flavor, 
-  		message: "I made this for you! Hope you like it!", 
+  		message: "", 
   		user_id: current_user.id, 
       has_been_given: false, 
       baked_by: current_user.name, 
@@ -39,7 +39,7 @@ class CakesController < ApplicationController
        flash[:been_given] = "You don't have any cakes to give."
        redirect_to "/users/" + current_user.id.to_s
     elsif current_user.cakes.count > 0 
-      @cake.update_attributes!(user_id: params[:id], has_been_given: true)
+      @cake.update_attributes!(user_id: params[:id], has_been_given: true, message: params[:message])
       current_user.update_attribute(:happiness, (current_user.happiness + 1.0))
       User.find(params[:id]).update_attribute(:happiness, (User.find(params[:id]).happiness + 0.5))
       redirect_to "/users/" + params[:id]
