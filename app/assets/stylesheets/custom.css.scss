@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 section {
@@ -78,11 +78,8 @@ p {
 
 #username {
   font-size: 50px;
- 
   font-family: 'Raleway', sans-serif;
-
   line-height: 1;
-
 }
 
 #happiness {
@@ -98,7 +95,7 @@ p {
   text-align: center;
   color: green;
   font-size: 20px;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 1px gray;
   img {
     width: 25px;
     height: 1em;
@@ -106,7 +103,7 @@ p {
   background-color: #C2C2D6;
   border-radius: 5px;
   border: 2px solid gray;
-  height: 600px;
+  height: 550px;
   opacity: 0.75;
   overflow: scroll;
   line-height: 1.2em;
@@ -123,16 +120,19 @@ p {
   img {
     border-radius: 2px;
   }
+  h2 {
+    font-size: 20px;
+    text-shadow: 1px 1px 1px gray;
+  }
 }
 
-
-
-
-
-
-
-
-
+#whole-page {
+  background-color: #FFE8FF;
+  margin-top: 0px;
+  display: block;
+  padding: 10px;
+  height: 100vh;
+}
 
 
 
