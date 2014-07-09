@@ -3,7 +3,7 @@
 <div class="span9">
 <div class="span3" id="username">
 <h2><%= @user.name %></h2>
-<%= link_to "How happy are you?", '/users/' + current_user.id.to_s + '/location' %> <br>
+<%= link_to "Happiness map.", '/users/' + current_user.id.to_s + '/location' %> <br>
 
 <% if current_user == @user %>
 <%= form_for(@cake) do |f| %>
