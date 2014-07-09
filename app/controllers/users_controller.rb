@@ -25,6 +25,9 @@ class UsersController < ApplicationController
   	@cake = current_user.cakes.build if signed_in?
   end
 
+  # def happiness
+  # end
+
 private 
 
 	def user_params

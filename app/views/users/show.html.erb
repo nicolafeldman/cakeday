@@ -7,7 +7,10 @@
 
 Your happiness meter reads: <%= @user.happiness %> <br>
 
+<img src= "http://maps.googleapis.com/maps/api/staticmap?center=272+Dwight+Street,New+Haven,+CT&zoom=13&size=1200x600">
+
 <% if current_user == @user %>
+
 <%= form_for(@cake) do |f| %>
      <%= f.submit "Bake a cake!", class: "btn btn-large btn-primary" %>
 <% end %>
@@ -41,3 +44,4 @@ Cakes <%= @user.name%> has received:
 	<br>
 <% end %>
 </div>
+
