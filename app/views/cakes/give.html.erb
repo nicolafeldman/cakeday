@@ -7,7 +7,7 @@
 	<%= form_tag "/cakes/" + params[:id] + "/transfercake", method: "patch" do %>
 		<%= label_tag("Send a message!") %> <%= text_area_tag(:message) %>
 		<%= hidden_field_tag "cake_id", cake.id %>
-		<%= submit_tag("Give to (name)") %>
+		<%= submit_tag("Give this cake! :)") %>
 
 	<% end %> <br>
 

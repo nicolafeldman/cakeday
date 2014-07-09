@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   end
 
   def map
-    @zoom = (21 - ((current_user.happiness.to_i)*0.1).to_i).to_s
+    @zoom = (21 - ((current_user.happiness.to_i)*0.3).to_i).to_s
     if @zoom.to_i < 0
       @zoom = 0.to_s
     end
