@@ -1,11 +1,17 @@
 <div class="row">
 
+
 <div class="span9">
 <div class="span3" id="username">
 <%= @user.name %>
 <br>
 
+<%= link_to "How happy are you?", '/users/' + current_user.id.to_s + '/location' %>
+Where are you? <%= @user.location.to_s %> <br>
+Your happiness meter reads: <%= @user.happiness %> <br>
+
 <% if current_user == @user %>
+
 <%= form_for(@cake) do |f| %>
      <%= f.submit "Bake a cake!", class: "btn btn-large btn-primary" %>
 <% end %>
@@ -49,7 +55,6 @@ Cakes <%= @user.name%> baked: <br> <br>
 <% @user.cakes.where("has_been_given = ?", false).each do |cake| %>
 	<img src=<%= cake.photo %> width=25px height=25px >
 <% end %>
-</div> 
 
 </div>
 

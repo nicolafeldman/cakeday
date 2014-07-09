@@ -10,6 +10,7 @@ Cakeday::Application.routes.draw do
   get "users/new"
   root 'static_pages#registration'
 
+  match 'users/:id/location', to: 'users#map', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
   match '/users', to: 'users#index', via: 'get'

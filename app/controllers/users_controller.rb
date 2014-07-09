@@ -1,3 +1,4 @@
+require 'pry'
 class UsersController < ApplicationController
   
 
@@ -23,6 +24,13 @@ class UsersController < ApplicationController
   def show
   	@user = User.find(params[:id])
   	@cake = current_user.cakes.build if signed_in?
+  end
+
+  def map
+    @zoom = (21 - ((current_user.happiness.to_i)*0.1).to_i).to_s
+    if @zoom.to_i < 0
+      @zoom = 0.to_s
+    end
   end
 
 private 
