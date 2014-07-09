@@ -6,6 +6,7 @@
 <%= @user.email %> <br>
 
 <%= link_to "How happy are you?", '/users/' + current_user.id.to_s + '/location' %>
+Where are you? <%= @user.location.to_s %> <br>
 Your happiness meter reads: <%= @user.happiness %> <br>
 
 <% if current_user == @user %>
