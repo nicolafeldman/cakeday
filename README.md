@@ -14,4 +14,3 @@ My friends and I recently created a holiday amongst ourselves called Internation
 1. Google maps API
 2. Twitter Bootstrap
 
-
