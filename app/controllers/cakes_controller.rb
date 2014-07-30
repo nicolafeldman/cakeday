@@ -33,15 +33,15 @@ class CakesController < ApplicationController
     @cakes = current_user.cakes.where("has_been_given = ?", false)
   end
 
-  def transfercake
+  def transfercake #essentially, subtract one from giver and add one to receiver
     @cake = current_user.cakes.find(params[:cake_id])
     if (@cake == nil)
        flash[:been_given] = "You don't have any cakes to give."
        redirect_to "/users/" + current_user.id.to_s
     elsif current_user.cakes.count > 0 
       @cake.update_attributes!(user_id: params[:id], has_been_given: true, message: params[:message])
-      current_user.update_attribute(:happiness, (current_user.happiness + 1.0))
-      User.find(params[:id]).update_attribute(:happiness, (User.find(params[:id]).happiness + 0.5))
+      current_user.update_attribute(:happiness, (current_user.happiness + 1.0)) #happiness is increased when giving cake
+      User.find(params[:id]).update_attribute(:happiness, (User.find(params[:id]).happiness + 0.5)) #happiness is increased by smaller margin when receiving cake
       redirect_to "/users/" + params[:id]
     else
       flash[:no_more_cakes] = 'You have no more cakes to give.'
