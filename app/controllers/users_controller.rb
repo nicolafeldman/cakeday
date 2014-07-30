@@ -27,8 +27,8 @@ class UsersController < ApplicationController
   end
 
   def map
-    @zoom = (21 - ((current_user.happiness.to_i)*0.3).to_i).to_s
-    if @zoom.to_i < 0
+    @zoom = (21 - ((current_user.happiness.to_i)*0.3).to_i).to_s #21 is the maximum zoom level for Google Maps API. The greater the happiness, the more the map is zoomed OUT (and the bigger the user looks)
+    if @zoom.to_i < 0 #applies limit to how large the map is allowed to get
       @zoom = 0.to_s
     end
   end

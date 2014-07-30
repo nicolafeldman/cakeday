@@ -2,7 +2,7 @@ require 'pry'
 class CakesController < ApplicationController
   before_action :signed_in_user
  
-  def create
+  def create #hash includes key-value pairs of flavors and their images
     flavors = {"chocolate" => "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSJNaRrW7SntN3pqaYY2pEVSOZQRPZlM9WKpLXLrPWPNZXgdp46", 
       "vanilla" => "http://sweetclipart.com/multisite/sweetclipart/files/imagecache/middle/food_holidays_birthday_cake_2_with_candles_vanilla.png", 
       "strawberry" => "http://www.foodclipart.com/food_clipart_images/strawberry_cake_0071-0905-1905-0551_SMU.jpg", 
@@ -23,7 +23,6 @@ class CakesController < ApplicationController
 	  else
 	  	render 'static_pages/help'
 	  end
-
   end
 
   def destroy
